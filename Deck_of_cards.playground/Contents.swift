@@ -7,6 +7,7 @@ var str = "Hello, playground"
 struct Card {
     let Color: String
     let Roll: Int
+    //giving cards properties to use later
 
 }
 
@@ -20,12 +21,14 @@ class Deck {
             self.cards.append(Card(Color: "Blue", Roll: Int(arc4random_uniform(2)+1)))
             self.cards.append(Card(Color: "Red", Roll: Int(arc4random_uniform(2)+3)))
             self.cards.append(Card(Color: "Green", Roll: Int(arc4random_uniform(2)+5)))
+    //creating the cards after init()
         }
     }
 
 func deal() -> Card? {
     if self.cards.count > 0 {
         return self.cards.remove(at: 0)
+        //removes the card at the [0] index
     }
     else {
         return nil
